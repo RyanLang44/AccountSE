@@ -28,7 +28,7 @@ public class AccountMapRepository implements AccountRepository{
 
 	public String createAccount(String account) {
 		this.accountMap.put(id++, util.getObjectFromJSON(account, Account.class));
-		return account;
+		return "Account created.";
 	}
 
 	public String deleteAccount(Long id) {
