@@ -43,7 +43,7 @@ public class AccountMapRepository implements AccountRepository{
 	}
 	public int getFirstNameCount(String name) {
 		int count = 0;
-		System.out.println(accountMap);
+		System.out.println(accountMap.size());
 		for (Long i=(long) 0; i < accountMap.size();i++) {
 			if(accountMap.get(i).getFirstName().equals(name)) {
 				count++;
