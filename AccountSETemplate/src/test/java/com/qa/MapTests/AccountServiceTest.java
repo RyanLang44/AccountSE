@@ -11,11 +11,11 @@ import com.qa.persistence.repository.AccountMapRepository;
 
 public class AccountServiceTest {
 	
-	AccountMapRepository repo = new AccountMapRepository();
+	AccountMapRepository repo;
 
 	@Before
 	public void setup() {
-	
+	repo = new AccountMapRepository();
 	}
 	
 	@Test
@@ -65,13 +65,19 @@ public class AccountServiceTest {
 	@Test
 	public void getCountForFirstNamesInAccountWhenOne() {
 		//For a later piece of functionality
-		fail("TODO");	
+		//repo.createAccount("{\"firstName\":\"John\",\"lastName\":\"Bobson\",\"accountNumber\":666}");
+		//repo.createAccount("{\"firstName\":\"Frank\",\"lastName\":\"Paul\",\"accountNumber\":667}");
+		//repo.createAccount("{\"firstName\":\"Bobby\",\"lastName\":\"Bobson\",\"accountNumber\":668}");
+		//assertEquals(1, repo.getFirstNameCount("John"));
 	}
 
 	@Test
 	public void getCountForFirstNamesInAccountWhenTwo() {
 		//For a later piece of functionality
-		fail("TODO");	
+		repo.createAccount("{\"firstName\":\"John\",\"lastName\":\"Bobson\",\"accountNumber\":666}");
+		repo.createAccount("{\"firstName\":\"Frank\",\"lastName\":\"Paul\",\"accountNumber\":667}");
+		repo.createAccount("{\"firstName\":\"John\",\"lastName\":\"Bobson\",\"accountNumber\":668}");
+		assertEquals(2, repo.getFirstNameCount("John"));
 	}
 
 }
