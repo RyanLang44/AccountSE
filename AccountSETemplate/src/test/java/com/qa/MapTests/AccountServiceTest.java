@@ -10,6 +10,8 @@ import com.qa.persistence.domain.Account;
 import com.qa.persistence.repository.AccountMapRepository;
 
 public class AccountServiceTest {
+	
+	AccountMapRepository repo = new AccountMapRepository();
 
 	@Before
 	public void setup() {
@@ -18,7 +20,7 @@ public class AccountServiceTest {
 	
 	@Test
 	public void addAccountTest() {
-		fail("TODO");	
+		assertEquals("Account created.", repo.createAccount("{\"firstName\":\"Bobby\",\"lastName\":\"Bobson\",\"accountNumber\":666}"));
 	}
 	
 	@Test
