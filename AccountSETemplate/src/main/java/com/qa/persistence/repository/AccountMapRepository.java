@@ -52,4 +52,9 @@ public class AccountMapRepository implements AccountRepository{
 		return count;
 	}
 
+	public String getAnAccount(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
