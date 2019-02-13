@@ -6,18 +6,18 @@ import java.util.Map.Entry;
 
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
-import com.qa.util.JackSonUtil;
 
 public class AccountMapRepository implements AccountRepository{
 	
-	//JackSonUtil util = new JackSonUtil();
 	JSONUtil util = new JSONUtil();
-	private static long id;
+	private long id;
 	
+	public AccountMapRepository(long id) {
+		super();
+		this.id = id;
+	}
 	Map<Long, Account> accountMap = new HashMap<Long, Account>();
 	
-	//You must provide concrete implementation for each of these methods
-	//do not change the method signature
 
 	public String getAllAccounts() {
 		String str = "";
