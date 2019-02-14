@@ -14,6 +14,10 @@ public class Account {
 	private String lastName;
 	private int accountNumber;
 	
+	public Account() {
+		
+	}
+	
 	public Account(String firstName, String lastName, int accountNumber) {
 		super();
 		this.firstName = firstName;
