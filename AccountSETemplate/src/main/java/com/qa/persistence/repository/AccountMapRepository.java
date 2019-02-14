@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.enterprise.inject.Alternative;
+
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
+@Alternative
 public class AccountMapRepository implements AccountRepository{
 	
 	JSONUtil util = new JSONUtil();
@@ -50,6 +53,11 @@ public class AccountMapRepository implements AccountRepository{
 			}
 		}
 		return count;
+	}
+
+	public String getAnAccount(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
