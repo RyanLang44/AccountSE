@@ -5,66 +5,45 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
+import com.qa.business.service.AccountServiceImpl;
 import com.qa.persistence.domain.Account;
+import com.qa.persistence.repository.AccountDBRepository;
 import com.qa.persistence.repository.AccountMapRepository;
+import com.qa.persistence.repository.AccountRepository;
+import com.qa.util.JSONUtil;
+
 
 public class AccountServiceTest {
-	
-	AccountMapRepository repo;
 
+	AccountMapRepository repo;
+	
+	
+	
 	@Before
 	public void setup() {
-	repo = new AccountMapRepository(0);
+		repo = new AccountMapRepository(0);
+		
 	}
-	
+
 	@Test
 	public void addAccountTest() {
-		assertEquals("Account created.", repo.createAccount("{\"firstName\":\"Bobby\",\"lastName\":\"Bobson\",\"accountNumber\":666}"));
-	}
-	
-	@Test
-	public void add2AccountsTest() {
-		//fail("TODO");	
-	}
+			}
 
 	@Test
 	public void removeAccountTest() {
-		//fail("TODO");	
-	}
-	
-	@Test
-	public void remove2AccountsTest() {
-		//fail("TODO");	
-	}
-	
-	@Test
-	public void remove2AccountTestAnd1ThatDoesntExist() {
-		//fail("TODO");	
-	}
-	
-	@Test
-	public void jsonStringToAccountConversionTest() {
-		// testing JSONUtil
-		////fail("TODO");	
+		
 	}
 
 
-	@Test
-	public void accountConversionToJSONTest() {
-		//testing JSONUtil
-		////fail("TODO");	
-	}
-
-	@Test
-	public void getCountForFirstNamesInAccountWhenZeroOccurances() {
-		//For a later piece of functionality
-		////fail("TODO");	
-	}
-	
 	@Test
 	public void getCountForFirstNamesInAccountWhenOne() {
-		
+
 		repo.createAccount("{\"firstName\":\"John\",\"lastName\":\"Bobson\",\"accountNumber\":666}");
 		repo.createAccount("{\"firstName\":\"Frank\",\"lastName\":\"Paul\",\"accountNumber\":667}");
 		repo.createAccount("{\"firstName\":\"Bobby\",\"lastName\":\"Bobson\",\"accountNumber\":668}");
@@ -73,7 +52,7 @@ public class AccountServiceTest {
 
 	@Test
 	public void getCountForFirstNamesInAccountWhenTwo() {
-		
+
 		repo.createAccount("{\"firstName\":\"John\",\"lastName\":\"Bobson\",\"accountNumber\":666}");
 		repo.createAccount("{\"firstName\":\"Frank\",\"lastName\":\"Paul\",\"accountNumber\":667}");
 		repo.createAccount("{\"firstName\":\"John\",\"lastName\":\"Bobson\",\"accountNumber\":668}");
